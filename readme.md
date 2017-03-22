@@ -69,11 +69,8 @@ Total two directories should be set up in master, which are “conf” and “me
 
 2.3 Execute the project through CLI
 
-@Master
-java -jar master.jar
+java -jar master.jar //@master
  
-@Worker nodes
-java -jar worker.jar <service IP of this worker> <service port of this worker>
+java -jar worker.jar <service IP of this worker> <service port of this worker> //@Worker nodes
 
-@Job client
-java -jar jobClient.jar
+java -jar jobClient.jar // @Job client
