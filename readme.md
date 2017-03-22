@@ -6,10 +6,13 @@ This project implements a basic MapReduce framework, which composes of one maste
 
 As mentioned before, this project includes three main components: Master, Worker and JobClient. These three components run independently and concurrently, so this project should be built into three jar packages: master.jar, worker.jar and job.jar, as following:
 •Master.jar:
+
 Master.jar runs in master node, which coordinate whole MapReduce process. The main class of it is “master.JobTracker”. 
 •Worker.jar
+
 Worker.jar runs in multiple worker (slave) nodes, which executes mapper task and reducer task. The main class of it is “worker.TaskTracker”. 
 •Job.jar
+
 Job.jar runs in client’s server. It defines the user’s job and submit the job into master. The main class of it is “client.WordCount”.
 
 3.How to setup the project
