@@ -58,6 +58,7 @@ heartBeatInterval = 1000
 3.2 Steps of setup environment
 
 1.copy jar package to corresponding servers. You should copy master.jar to master, worker.jar to worker nodes, jobClient.jar to job client server.
+
 2.Set up the necessary directories and configuration files for these three components:
 •Master
 Total two directories should be set up in master, which are “conf” and “source”.  The “mapreduce.conf” should be put into “conf” directory and input source file should put into “source” directory.
@@ -65,6 +66,7 @@ Total two directories should be set up in master, which are “conf” and “so
 Total two directories should be set up in master, which are “conf” and “source”.  The “slave.conf” should be put into “conf” directory and input source file should put into “source” directory.
 •Job client
 Total two directories should be set up in master, which are “conf” and “methods”.  The “job.conf” should be put into “conf” directory and the methods file of mapper and reducer should be put into “methods” directory.
+
 3.Complete the configuration files based on the environment such as the IP address of master, workers and job client.
 
 2.3 Execute the project through CLI
