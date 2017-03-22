@@ -1,3 +1,4 @@
+This project implements a basic MapReduce framework, which supports part of fundamental MapReduce features, including 
 1.How to build the project
 This project includes three main components: Master, Worker and JobClient. These three components run independently and concurrently, so this project should be built into three jar packages: master.jar, worker.jar and job.jar, as following:
 •Master.jar:
