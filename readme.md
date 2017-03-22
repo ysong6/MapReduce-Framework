@@ -15,6 +15,7 @@ Job.jar runs in client’s server. It defines the user’s job and submit the jo
 3.How to setup the project
 
 3.1 Configuration file
+
 This project use configuration files to provide necessary information to these three components. There are three configuration files as following:
 •mapreduce.conf:
 This configuration file is only for master. It defines the service IP address of master, service port of JobTracker module, which responsible for track all jobs and communicate with the job client, service port of Monitor module, which responsible for monitoring the framework’s status through heartbeat, the interval of heartbeat.
@@ -55,6 +56,7 @@ jobClientIp = 10.211.55.5
 heartBeatInterval = 1000
 
 3.2 Steps of setup environment
+
 1.copy jar package to corresponding servers. You should copy master.jar to master, worker.jar to worker nodes, jobClient.jar to job client server.
 2.Set up the necessary directories and configuration files for these three components:
 •Master
@@ -66,9 +68,12 @@ Total two directories should be set up in master, which are “conf” and “me
 3.Complete the configuration files based on the environment such as the IP address of master, workers and job client.
 
 2.3 Execute the project through CLI
-•Master
- java -jar master.jar
-•Worker
+
+@Master
+java -jar master.jar
+ 
+@Worker nodes
 java -jar worker.jar <service IP of this worker> <service port of this worker>
-•Job client
+
+@Job client
 java -jar jobClient.jar
