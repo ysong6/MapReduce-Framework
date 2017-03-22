@@ -5,12 +5,15 @@ This project implements a basic MapReduce framework, which composes of one maste
 2.How to build the project
 
 As mentioned before, this project includes three main components: Master, Worker and JobClient. These three components run independently and concurrently, so this project should be built into three jar packages: master.jar, worker.jar and job.jar, as following:
+
 •Master.jar:
 
 Master.jar runs in master node, which coordinate whole MapReduce process. The main class of it is “master.JobTracker”. 
+
 •Worker.jar
 
 Worker.jar runs in multiple worker (slave) nodes, which executes mapper task and reducer task. The main class of it is “worker.TaskTracker”. 
+
 •Job.jar
 
 Job.jar runs in client’s server. It defines the user’s job and submit the job into master. The main class of it is “client.WordCount”.
@@ -20,7 +23,9 @@ Job.jar runs in client’s server. It defines the user’s job and submit the jo
 3.1 Configuration file
 
 This project use configuration files to provide necessary information to these three components. There are three configuration files as following:
+
 •mapreduce.conf:
+
 This configuration file is only for master. It defines the service IP address of master, service port of JobTracker module, which responsible for track all jobs and communicate with the job client, service port of Monitor module, which responsible for monitoring the framework’s status through heartbeat, the interval of heartbeat.
 
 Example:
@@ -30,6 +35,7 @@ monitorServicePort = 8000
 heartBeatInterval = 1000
 
 •slave.conf:
+
 This configuration file is only for worker. It defines master’s service IP, master’s service port, master’s service name, the file path of intermediate file, partition file and result file of reduce task, the resource of worker, including the number of mapper slot and reducer slot, interval of heartbeat and service name of worker.
 
 Example:
@@ -45,6 +51,7 @@ heartBeatInterval = 1000
 slaveServiceName = TaskTracker
 
 •job.conf:
+
 •This configuration file is only for job client. It defines master’s service IP, master’s service port, the file path of mapper method and reducer method, input file and final result, partition size, job client’s IP and interval of job status checking
 
 Example:
