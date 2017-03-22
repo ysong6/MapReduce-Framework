@@ -1,6 +1,0 @@
-word word bbb
-abc abc
-abc
-dc
-dc word abc
-ccc
