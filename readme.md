@@ -1,6 +1,8 @@
-This project implements a basic MapReduce framework, which composes of one master, multiple worker nodes and a job client.    ssupports part of fundamental MapReduce features
-1.How to build the project
-This project includes three main components: Master, Worker and JobClient. These three components run independently and concurrently, so this project should be built into three jar packages: master.jar, worker.jar and job.jar, as following:
+1.Summary
+This project implements a basic MapReduce framework, which composes of one master, multiple worker nodes and a job client.    This framework supports fundamental MapReduce features, such as job submition, job partition, map/reduce task allocation and worker nodes failover.
+
+2.How to build the project
+As mentioned before, this project includes three main components: Master, Worker and JobClient. These three components run independently and concurrently, so this project should be built into three jar packages: master.jar, worker.jar and job.jar, as following:
 •Master.jar:
 Master.jar runs in master node, which coordinate whole MapReduce process. The main class of it is “master.JobTracker”. 
 •Worker.jar
@@ -8,8 +10,8 @@ Worker.jar runs in multiple worker (slave) nodes, which executes mapper task and
 •Job.jar
 Job.jar runs in client’s server. It defines the user’s job and submit the job into master. The main class of it is “client.WordCount”.
 
-2.How to setup the project
-2.1 Configuration file
+3.How to setup the project
+3.1 Configuration file
 This project use configuration files to provide necessary information to these three components. There are three configuration files as following:
 •mapreduce.conf:
 This configuration file is only for master. It defines the service IP address of master, service port of JobTracker module, which responsible for track all jobs and communicate with the job client, service port of Monitor module, which responsible for monitoring the framework’s status through heartbeat, the interval of heartbeat.
@@ -49,8 +51,8 @@ servicePort = 9000
 jobClientIp = 10.211.55.5
 heartBeatInterval = 1000
 
-2.2 Steps of setup environment
-1.copy jar package to corresponding servers. You should copy master.jar to master, worker.jar to workers, jobClient.jar to job client server.
+3.2 Steps of setup environment
+1.copy jar package to corresponding servers. You should copy master.jar to master, worker.jar to worker nodes, jobClient.jar to job client server.
 2.Set up the necessary directories and configuration files for these three components:
 •Master
 Total two directories should be set up in master, which are “conf” and “source”.  The “mapreduce.conf” should be put into “conf” directory and input source file should put into “source” directory.
